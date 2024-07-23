@@ -1,0 +1,134 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.test-topics {
+  padding: 40px;
+  background: #f0f4f8;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.test-topics h1 {
+  margin-bottom: 50px;
+  font-size: 2.8em;
+  color: #374f68;
+  position: relative;
+  font-weight: 700;
+}
+
+.test-topics h1::after {
+  content: '';
+  width: 180px;
+  height: 4px;
+  background: linear-gradient(to right, #5894bb, #2ecc71);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px; 
+}
+
+.test-topics ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.test-topics li {
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.test-topics li:hover {
+  transform: translateY(-5px);
+}
+
+.test-topics button {
+  padding: 18px 20px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #34495e;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.test-topics button::before {
+  content: '→';
+  margin-right: 15px;
+  transition: all 0.4s ease-in-out;
+  font-size: 1.2em;
+  color: #3498db;
+}
+
+.test-topics button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #030405, #2ecc71);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.test-topics button:hover {
+  color: rgb(10, 10, 11);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.test-topics button:hover::before {
+  transform: translateX(5px) rotate(90deg);
+  color: rgb(25, 20, 20);
+}
+
+.test-topics button:hover::after {
+  opacity: 1;
+}
+
+.test-topics button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .test-topics {
+    padding: 30px;
+  }
+
+  .test-topics h1 {
+    font-size: 2.4em;
+  }
+
+  .test-topics button {
+    font-size: 1.1em;
+  }
+}
